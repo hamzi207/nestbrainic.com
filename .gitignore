@@ -1,0 +1,23 @@
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI / Bot folders
+.claude/
+
+# Original Template Downloads
+genciohtml-10/
+*.rar
+*.zip
+
+# Project Plans
+docs/plans/

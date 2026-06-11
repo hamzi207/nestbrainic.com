@@ -1,0 +1,270 @@
+/* ============================================================
+   NESTBRAINIC — Brand & Site CSS Overrides
+   Load order: last (overrides template defaults)
+   ============================================================ */
+
+/* ── 1. CSS VARIABLES ─────────────────────────────────────── */
+:root {
+  --brand-orange:     #F68712;
+  --brand-cyan:       #00ADEF;
+  --tp-theme-vogue:   #2E125D;
+  --tp-theme-orange:  #F68712;
+  --tech-purple:      #2E125D;
+  --tech-purple-dark: #250B44;
+  --tech-purple-soft: #452C67;
+  --cta-orange:       #F68712;
+  --cta-orange-hover: #FD7D06;
+  --digital-cyan:     #00ADEF;
+  --background-light: #F8FAFC;
+  --card-white:       #FFFFFF;
+  --text-dark:        #1B1235;
+  --border-light:     #E8E5EF;
+  --tp-theme-bg:      #F8FAFC;
+  --tp-theme-bg-2:    #F4F0FA;
+}
+
+/* ── 2. VOGUE BACKGROUND ──────────────────────────────────── */
+.vogue-bg { background-color: var(--tech-purple) !important; }
+
+/* Headings inside vogue sections default white */
+.vogue-bg h2 { color: #fff; }
+
+/* ── 3. LOGO ──────────────────────────────────────────────── */
+.logo img,
+.tp-offcanvas__logo img,
+.bs-footer__top-logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+/* ── 4. BUTTON HOVER ──────────────────────────────────────── */
+.tp-btn-hover.alt-bg-orange b,
+.tp-btn-hover.alt-bg-orange:hover b {
+  background-color: var(--cta-orange-hover) !important;
+}
+
+/* ── 5. EQUAL-HEIGHT SERVICE CARDS ───────────────────────── */
+/* Exclude col-12 rows (section titles / view-all buttons) */
+.tp-it-service .row > [class*="col-"]:not(.col-12) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.it-service__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+/* Centre icons/text in cards that use text-center */
+.it-service__item.text-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* ── 6. SERVICE CARD ICONS ────────────────────────────────── */
+/* Uniform brand-orange colour for all FA icons in icon containers */
+.it-servicce__item-img > i { color: var(--cta-orange); }
+
+/* ── 7. CHECKLIST (index / about why-work-with-us) ───────── */
+.tp-it-author-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tp-it-author-info ul li          { padding: 6px 0; }
+.tp-it-author-info ul li i        { color: var(--cta-orange); margin-right: 8px; }
+
+/* ── 8. "IDEAL FOR" SECTION ──────────────────────────────── */
+/* Index uses a plain <span> title; about uses h2 + p */
+.tp-it-brand .it-breand-title span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+.tp-it-brand .section-title-wraper h2 { color: #fff; }
+.tp-it-brand .section-title-wraper p  { color: rgba(255, 255, 255, 0.8); }
+
+/* Item grid: white text, brand-orange icons */
+/* Direct p rule needed — global "p { color: var(--tp-text-body) }" beats inheritance */
+.tp-it-brand .row > [class*="col-"]:not(.col-12) { color: #fff; }
+.tp-it-brand .row > [class*="col-"]:not(.col-12) p { color: #fff; }
+.tp-it-brand .row > [class*="col-"]:not(.col-12) > i {
+  display: block;
+  color: var(--brand-orange);
+  margin-bottom: 10px;
+}
+
+/* ── 9. CONTACT INFO CARDS ────────────────────────────────── */
+.nb-contact-card {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 40px 30px;
+  height: 100%;
+  text-align: center;
+}
+.nb-contact-card > i {
+  font-size: 3em;
+  color: var(--cta-orange);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+.nb-contact-card h4               { color: var(--tech-purple); margin-bottom: 0.625rem; }
+.nb-contact-card a                { color: var(--cta-orange); }
+.nb-contact-card .nb-response-time{ color: var(--tech-purple); }
+
+/* ── 10. SERVICE-DETAILS SIDEBAR ─────────────────────────── */
+.nb-sidebar-widget {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.nb-sidebar-widget h3              { color: var(--tech-purple); margin-bottom: 25px; font-size: 20px; }
+.nb-sidebar-widget ul              { list-style: none; padding: 0; margin: 0; }
+.nb-sidebar-widget ul li           { padding: 8px 0; border-bottom: 1px solid #eee; }
+.nb-sidebar-widget ul li:last-child{ border-bottom: none; }
+.nb-sidebar-widget ul li a         { color: var(--text-dark); }
+.nb-sidebar-widget ul li a i       { color: var(--cta-orange); margin-right: 5px; }
+.nb-sidebar-widget ul li.active a  { color: var(--cta-orange); font-weight: 600; }
+
+.nb-sidebar-cta {
+  background: var(--tech-purple);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+.nb-sidebar-cta > i { font-size: 2em; color: var(--brand-orange); display: block; margin-bottom: 1rem; }
+.nb-sidebar-cta h4  { color: #fff; margin-bottom: 10px; }
+.nb-sidebar-cta p   { color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; }
+
+.nb-sidebar-cta-btn {
+  background: var(--brand-orange);
+  color: #fff !important;
+  padding: 12px 25px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 600;
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
+}
+.nb-sidebar-cta-btn:hover { background: var(--cta-orange-hover); color: #fff !important; }
+
+/* ── 11. SERVICE-DETAILS TECH STACK CARDS ────────────────── */
+.nb-tech-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  height: 100%;
+}
+.nb-tech-card > i { font-size: 2em; color: var(--tech-purple); display: block; margin-bottom: 10px; }
+.nb-tech-card > p { margin: 0; font-weight: 600; }
+
+/* ── 12. SERVICE-DETAILS MAIN CONTENT CHECKLIST ──────────── */
+.nb-checklist              { list-style: none; padding: 0; margin-bottom: 30px; }
+.nb-checklist li           { padding: 10px 0; border-bottom: 1px solid #eee; }
+.nb-checklist li:last-child{ border-bottom: none; }
+.nb-checklist li i         { color: var(--cta-orange); margin-right: 10px; }
+
+/* ── 13. HERO SLIDER — REDUCED SIZE ──────────────────────── */
+/* Template defaults: 880px height, 100px title — too large for agency site */
+.it-slider-height                          { min-height: 620px; }
+.it-slider__content-title                  { font-size: 58px; letter-spacing: -1px; }
+.it-slider__content p                      { font-size: 17px; }
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .it-slider-height                        { min-height: 560px; }
+  .it-slider__content-title                { font-size: 52px; }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .it-slider-height                        { min-height: 500px; }
+  .it-slider__content-title                { font-size: 44px; }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .it-slider-height                        { min-height: 420px; }
+  .it-slider__content-title                { font-size: 34px; letter-spacing: 0; }
+}
+@media (max-width: 767px) {
+  .it-slider-height                        { min-height: 360px; }
+  .it-slider__content-title                { font-size: 26px; letter-spacing: 0; }
+  .it-slider__content p                    { font-size: 15px; }
+}
+
+/* ── 14. SERVICE CARD COUNTER FORMAT ─────────────────────── */
+/* Template hardcodes "0" + counter() which breaks at 10+. Use built-in style. */
+.it-service__item::after {
+  content: counter(count, decimal-leading-zero);
+}
+
+/* ── 14. SERVICE PAGE — CTA BAND BUTTON ──────────────────── */
+/* .tp-border-btn forces white bg — override to ghost style on dark band */
+.nb-service-cta-btn {
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: var(--brand-orange) !important;
+}
+.nb-service-cta-btn:hover {
+  background-color: var(--brand-orange) !important;
+  color: #fff !important;
+}
+
+/* ── 14. RESPONSIVE FIXES ────────────────────────────────── */
+/* pl-50 too large on tablets/phones */
+@media (max-width: 991px) {
+  .pl-50 { padding-left: 0 !important; }
+}
+
+/* ── 15. BROWSER & DEVICE COMPATIBILITY ──────────────────── */
+/* Prevent horizontal scroll on small screens */
+body { overflow-x: hidden; }
+
+/* Anti-aliased fonts across browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Responsive images (belt-and-suspenders on Bootstrap) */
+img { max-width: 100%; height: auto; }
+
+/* Smooth scrolling — respects reduced-motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Consistent cursor on buttons */
+button { cursor: pointer; }
+
+/* Cross-browser placeholder colour */
+::-webkit-input-placeholder { color: #999; opacity: 1; }
+:-ms-input-placeholder      { color: #999; opacity: 1; }
+::-ms-input-placeholder     { color: #999; opacity: 1; }
+::placeholder               { color: #999; opacity: 1; }
+
+/* Keyboard-accessible focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cta-orange);
+  outline-offset: 2px;
+}
+
+/* Portfolio / hero image fills */
+.it-portfolio-item__thumb img,
+.w-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
